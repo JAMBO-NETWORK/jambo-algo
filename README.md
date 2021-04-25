@@ -31,17 +31,17 @@ pip install gensim pandas tqdm sklearn
 ## Run
 
 ```bash
-bash run.sh
+run.sh
 ```
 
 Run sequence:
 
 ```bash
 #!/bin/bash
-bash preprocess/run.sh &&  # data preprocessing
-bash get_emb/run.sh &&     # embedding
-bash model/run.sh &&       # model training, 20 classifications for forecasting
-bash oof/run.sh &&         # training result reduction, merge into model.npy, [4m, 20] matrix
-bash ensemble/run.sh       # stacking of model oof with Ridge
+preprocess/run.sh &&  # data preprocessing
+get_emb/run.sh &&     # embedding
+model/run.sh &&       # model training, 20 classifications for forecasting
+oof/run.sh &&         # training result reduction, merge into model.npy, [4m, 20] matrix
+ensemble/run.sh       # stacking of model oof with Ridge
 echo "all done!"
 ```
